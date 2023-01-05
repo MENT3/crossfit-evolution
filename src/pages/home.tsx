@@ -1,9 +1,7 @@
 import { useAuth } from "~/contexts/auth-provider"
 
-import { AuthContextProps } from "~/types/supabase"
-
 export default function Home() {
-  const { signOut } = useAuth() as AuthContextProps
+  const { signOut } = useAuth()
 
   return (
     <div>

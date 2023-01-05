@@ -1,4 +1,4 @@
-import { AuthError, AuthResponse, Session, SignInWithPasswordCredentials, SignUpWithPasswordCredentials } from '@supabase/supabase-js'
+import { Session } from '@supabase/supabase-js'
 import React, { useContext, useState, useEffect, type ReactNode, Context } from 'react'
 
 import { supabase } from '~/lib/supabase'
