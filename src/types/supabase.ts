@@ -14,7 +14,7 @@ export interface Database {
       score: {
         Row: {
           id: number
-          created_at: string | null
+          created_at: string
           workout_id: number
           value: number
           type: number
@@ -40,7 +40,7 @@ export interface Database {
       workout: {
         Row: {
           id: number
-          created_at: string | null
+          created_at: string
           description: string
         }
         Insert: {

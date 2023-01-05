@@ -1,7 +1,7 @@
-import './index.css'
+import './main.css'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App'
+import App from '~/app'
 import AppProviders from '~/contexts/app-providers'
 
 createRoot(document.getElementById('root') as HTMLElement).render(
