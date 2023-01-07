@@ -5,11 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Protected } from './components/protect/protected'
 
 function FullPageLoader() {
-  return (
-    <div className="flex h-screen w-full items-center justify-center bg-dark-500">
-      LOADING
-    </div>
-  )
+  return <div className="flex h-screen w-full items-center justify-center bg-dark-500">LOADING</div>
 }
 
 export default function App() {

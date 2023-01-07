@@ -5,12 +5,7 @@ export const useWorkout = (id: Number) => {
   return useQuery({
     queryKey: ['workout', id],
     queryFn: async () => {
-      const { data } = await supabase
-        .from('workout')
-        .select()
-        .eq('id', id)
-        .limit(1)
-        .single()
+      const { data } = await supabase.from('workout').select().eq('id', id).limit(1).single()
 
       return data
     }

@@ -1,12 +1,11 @@
-import { User, SignInWithPasswordCredentials, SignUpWithPasswordCredentials, AuthResponse } from '@supabase/supabase-js'
+import {
+  User,
+  SignInWithPasswordCredentials,
+  SignUpWithPasswordCredentials,
+  AuthResponse
+} from '@supabase/supabase-js'
 
-export type Json =
-  | string
-  | number
-  | boolean
-  | null
-  | { [key: string]: Json }
-  | Json[]
+export type Json = string | number | boolean | null | { [key: string]: Json } | Json[]
 
 export interface Database {
   public: {
@@ -68,8 +67,8 @@ export interface Database {
 }
 
 export interface AuthContextProps {
-  signUp: (payload: SignUpWithPasswordCredentials) => Promise<AuthResponse>,
-  signInWithPassword: (payload: SignInWithPasswordCredentials) => Promise<AuthResponse>,
-  signOut: () => void,
+  signUp: (payload: SignUpWithPasswordCredentials) => Promise<AuthResponse>
+  signInWithPassword: (payload: SignInWithPasswordCredentials) => Promise<AuthResponse>
+  signOut: () => void
   user: User | null
 }

@@ -1,4 +1,3 @@
-
 export function splitBy<T>(items: T[], splitter: (item: T) => boolean): [Array<T>, Array<T>] {
   const itemsA = []
   const itemsB = []

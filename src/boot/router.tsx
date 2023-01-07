@@ -20,6 +20,4 @@ export const rootRoutes: CustomRouteObject[] = [
   }
 ]
 
-export const routes: CustomRouteObject[] = [
-  ...rootRoutes
-]
+export const routes: CustomRouteObject[] = [...rootRoutes]

@@ -1,6 +1,5 @@
 import { Session } from '@supabase/supabase-js'
 import React, { useContext, useState, useEffect, type ReactNode, Context } from 'react'
-
 import { supabase } from '~/lib/supabase'
 import { AuthContextProps } from '~/types/supabase'
 
@@ -21,7 +20,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState<Boolean>(true)
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session }}) => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session)
       setLoading(false)
     })
@@ -33,8 +32,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const authContextProps: AuthContextProps = {
-    signUp: payload => supabase.auth.signUp(payload),
-    signInWithPassword: payload => supabase.auth.signInWithPassword(payload),
+    signUp: (payload) => supabase.auth.signUp(payload),
+    signInWithPassword: (payload) => supabase.auth.signInWithPassword(payload),
     signOut: () => supabase.auth.signOut(),
     user: session?.user ?? null
   }
@@ -44,8 +43,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <AuthContext.Provider value={authContextProps}>
-      {!loading && children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={authContextProps}>{!loading && children}</AuthContext.Provider>
   )
 }

@@ -6,9 +6,9 @@ import { supabase } from '~/lib/supabase'
 export default function AuthPage() {
   const { user } = useAuth()
 
-  return (
-    user
-      ? <Navigate to="/" replace />
-      : <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />
+  return user ? (
+    <Navigate to="/" replace />
+  ) : (
+    <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />
   )
 }

@@ -17,19 +17,23 @@ export default function Home() {
 
   return (
     <div>
-      <div className='flex justify-between'>
+      <div className="flex justify-between">
         <h2>HOME</h2>
 
         <button
           onClick={signOut}
-          className='px-2 py-1 bg-teal-600 text-sm text-white rounded transition hover:bg-teal-500'
+          className="px-2 py-1 bg-teal-600 text-sm text-white rounded transition hover:bg-teal-500"
         >
           Logout
         </button>
       </div>
 
       <select onChange={(v) => setSelected(Number(v.target.value))}>
-        {workouts?.map(w => <option key={w.id} value={w.id}>{formatDate(w.created_at)}</option>)}
+        {workouts?.map((w) => (
+          <option key={w.id} value={w.id}>
+            {formatDate(w.created_at)}
+          </option>
+        ))}
       </select>
 
       {selected && <WorkoutDescription workoutId={selected} />}
