@@ -1,4 +1,4 @@
-import { User, SignInWithPasswordCredentials, SignUpWithPasswordCredentials, AuthResponse, AuthError } from '@supabase/supabase-js'
+import { User, SignInWithPasswordCredentials, SignUpWithPasswordCredentials, AuthResponse } from '@supabase/supabase-js'
 
 export type Json =
   | string
