@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react'
-import { useAuth } from '~/contexts/auth-provider'
-import { useWorkouts } from '~/hooks/workouts/use-workouts'
 import { formatDate } from '~/utils/common/date'
+import { useWorkouts } from '~/hooks/workouts/use-workouts'
 import { WorkoutDescription } from '~/components/workout/workout-description'
 
 export default function Home() {
-  const { signOut } = useAuth()
   const { data: workouts } = useWorkouts()
   const [selected, setSelected] = useState<number | null>(null)
 
@@ -17,18 +15,10 @@ export default function Home() {
 
   return (
     <div>
-      <div className="flex justify-between">
-        <h2>HOME</h2>
-
-        <button
-          onClick={signOut}
-          className="px-2 py-1 bg-teal-600 text-sm text-white rounded transition hover:bg-teal-500"
-        >
-          Logout
-        </button>
-      </div>
-
-      <select onChange={(v) => setSelected(Number(v.target.value))}>
+      <select
+        className="bg-gray-50 border text-sm font-medium text-gray-900 rounded-lg focus:ring-teal-500 block w-full p-2"
+        onChange={(v) => setSelected(Number(v.target.value))}
+      >
         {workouts?.map((w) => (
           <option key={w.id} value={w.id}>
             {formatDate(w.created_at)}
@@ -36,7 +26,7 @@ export default function Home() {
         ))}
       </select>
 
-      <div className="p-2 bg-gray-200 rounded">
+      <div className="w-full mt-4 p-2 bg-gray-50 border text-sm text-gray-900 rounded-lg">
         {selected && <WorkoutDescription workoutId={selected} />}
       </div>
     </div>
