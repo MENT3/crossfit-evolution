@@ -11,6 +11,7 @@ export const useWorkouts = () => {
         .order('created_at', { ascending: false })
 
       return data
-    }
+    },
+    staleTime: Infinity
   })
 }

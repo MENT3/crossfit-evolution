@@ -8,6 +8,7 @@ export const useWorkout = (id: Number) => {
       const { data } = await supabase.from('workout').select().eq('id', id).limit(1).single()
 
       return data
-    }
+    },
+    staleTime: Infinity
   })
 }
