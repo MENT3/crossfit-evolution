@@ -1,4 +1,5 @@
 import { useWorkout } from '~/hooks/workouts/use-workout'
+import { Spinner } from '~/components/spinner'
 
 interface WorkoutDescriptionProps {
   workoutId: Number
@@ -10,8 +11,8 @@ export const WorkoutDescription = (props: WorkoutDescriptionProps) => {
   const { isLoading, data } = useWorkout(workoutId)
 
   if (isLoading) {
-    return <div>LOADING ANIMATION</div>
+    return <Spinner />
   }
 
-  return <div className="p-2 bg-gray-200 rounded whitespace-pre-line">{data?.description}</div>
+  return <div className="whitespace-pre-line">{data?.description}</div>
 }

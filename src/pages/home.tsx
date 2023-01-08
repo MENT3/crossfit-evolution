@@ -36,7 +36,9 @@ export default function Home() {
         ))}
       </select>
 
-      {selected && <WorkoutDescription workoutId={selected} />}
+      <div className="p-2 bg-gray-200 rounded">
+        {selected && <WorkoutDescription workoutId={selected} />}
+      </div>
     </div>
   )
 }
