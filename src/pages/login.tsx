@@ -9,6 +9,8 @@ export default function AuthPage() {
   return user ? (
     <Navigate to="/" replace />
   ) : (
-    <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />
+    <div className="mx-auto mt-16 max-w-[500px]">
+      <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />
+    </div>
   )
 }
