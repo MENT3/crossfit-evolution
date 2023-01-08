@@ -8,7 +8,7 @@
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": false,
+    "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -19,6 +19,6 @@
       "~/*": ["./src/*"]
     }
   },
-  "include": ["src", "src/app"],
+  "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
