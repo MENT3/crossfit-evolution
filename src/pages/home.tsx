@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div>
       <select
-        className="bg-gray-50 border text-sm font-medium text-gray-900 rounded-lg focus:ring-teal-500 block w-full p-2"
+        className="bg-gray-50 border font-medium text-gray-900 rounded-lg focus:ring-teal-500 block w-full p-2"
         onChange={(v) => setSelected(Number(v.target.value))}
       >
         {workouts?.map((w) => (
@@ -26,7 +26,7 @@ export default function Home() {
         ))}
       </select>
 
-      <div className="w-full mt-4 p-2 bg-gray-50 border text-sm text-gray-900 rounded-lg">
+      <div className="w-full mt-4 p-2 bg-gray-50 border text-gray-900 rounded-lg">
         {selected && <WorkoutDescription workoutId={selected} />}
       </div>
     </div>
