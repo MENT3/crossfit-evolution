@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { formatDate } from '~/utils/common/date'
 import { useWorkouts } from '~/hooks/workouts/use-workouts'
 import { WorkoutDescription } from '~/components/workout/workout-description'
+import { ScoreList } from '~/components/score/score-list'
 
 export default function Home() {
   const { data: workouts } = useWorkouts()
@@ -16,7 +17,7 @@ export default function Home() {
   return (
     <div>
       <select
-        className="bg-gray-50 border font-medium text-gray-900 rounded-lg focus:ring-teal-500 block w-full p-2"
+        className="bg-gray-50 border font-medium text-gray-900 rounded-lg focus:ring-teal-500 block w-full p-2 cursor-pointer"
         onChange={(v) => setSelected(Number(v.target.value))}
       >
         {workouts?.map((w) => (
@@ -28,6 +29,10 @@ export default function Home() {
 
       <div className="w-full mt-4 p-2 bg-gray-50 border text-gray-900 rounded-lg">
         {selected && <WorkoutDescription workoutId={selected} />}
+      </div>
+
+      <div className="w-full mt-4 p-2 bg-gray-50 border text-gray-900 rounded-lg">
+        {selected && <ScoreList workoutId={selected} />}
       </div>
     </div>
   )
